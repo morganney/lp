@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp landing-page.html dist/index.html && cp styles.css dist/styles.css && cp -R assets dist/assets",
+    "build": "rm -rf dist && mkdir -p dist && cp landing-page.html dist/index.html && cp styles.css script.js dist && cp -R assets dist/assets",
     "serve": "npm run build && serve -l 4174 dist",
     "format": "oxfmt"
   },
