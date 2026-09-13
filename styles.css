@@ -133,6 +133,21 @@ main > img:last-of-type {
   filter: drop-shadow(3px 6px 15px #00000036);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .has-reveal-animations [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 400ms ease-out,
+      transform 400ms ease-out;
+  }
+
+  .has-reveal-animations [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (width >= 1200px) {
   main {
     grid-template-columns: 1fr fit-content(var(--desktop-column-width)) fit-content(
