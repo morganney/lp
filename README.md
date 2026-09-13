@@ -7,7 +7,7 @@
 - Keep the asset filenames as they are or rename for a consistent standard. Left them alone because EBQ clients probably have a good reason for the given names.
 - Global padding. I noticed no padding styles in dev mode that applied to the overall page, so I used the smallest value I could glean from the grid lines (16px).
 - Visual display and HTML source order disconnect: I opted for them to align on mobile devices and to accept a slight disconnect on desktop for the img elements because users don't usually tab to images and screen readers annoucing the img alt before the nearby text is probably not that disruptive.
-- Desktop content padding: On desktop the --content-horz-padding is not really necessary, but I kept it because it helped more of the <p> text line-breaks match up with the Adobe XD design.
+- Desktop content padding: On desktop the --content-horz-padding is not really necessary, but I kept it because it helped more of the `<p>` text line-breaks match up with the Adobe XD design.
 - Contact in-page anchors: I just made them that way because the design did not indicate what happens when those are clicked. Most likely they would bring the user to a real contact form page, or open a modal with a contact form.
 - Debounce or throttle the scroll listener: I opted not to because it checks only four elements, removes itself after every element is revealed, and is registered as passive. Debouncing would delay the reveal, while throttling would add complexity without a meaningful performance benefit.
 - Script in the head: I used `type="module"` because module scripts defer by default while opting into ESM semantics.
