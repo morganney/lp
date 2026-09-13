@@ -50,7 +50,7 @@ p {
 }
 a[href="#contact"] {
   border-radius: 50px;
-  background-color: #2979ec;
+  background-color: #1463d1;
   color: #ffffff;
   padding: 12px 36px;
   font: normal normal bold 15px/20px "Open Sans";
@@ -128,7 +128,7 @@ section:nth-of-type(3) {
     margin-bottom: 32px;
   }
 }
-img[alt^="Three professional team members"] {
+main > img:last-of-type {
   grid-area: team-img;
   filter: drop-shadow(3px 6px 15px #00000036);
 }
@@ -158,7 +158,7 @@ img[alt^="Three professional team members"] {
       minmax(max-content, 1fr);
     grid-template-areas: "logo . . cta";
     column-gap: 28px;
-    padding-top: 32px;
+    padding-top: 16px;
 
     a:first-of-type {
       grid-area: logo;
@@ -178,5 +178,9 @@ img[alt^="Three professional team members"] {
     > * {
       grid-column: 2;
     }
+  }
+
+  img[alt^="Three professional team members"] {
+    margin-top: 68px;
   }
 }
