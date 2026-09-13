@@ -180,7 +180,7 @@ main > img:last-of-type {
     }
   }
 
-  img[alt^="Three professional team members"] {
+  main > img:last-of-type {
     margin-top: 68px;
   }
 }
