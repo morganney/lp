@@ -1,0 +1,182 @@
+:root {
+  --font-body: "Open Sans", sans-serif;
+  --content-horz-padding: 16px;
+  --desktop-column-width: 566px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  text-align: center;
+  font-family: var(--font-body);
+  color: #000000;
+  background-color: #ffffff;
+}
+main {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "hero"
+    "tools-img"
+    "tools"
+    "team"
+    "team-img";
+  padding-bottom: 68px;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+main > img {
+  margin-inline: auto;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  letter-spacing: 0px;
+}
+p {
+  font: normal normal normal 20px/25px "Open Sans";
+}
+a[href="#contact"] {
+  border-radius: 50px;
+  background-color: #2979ec;
+  color: #ffffff;
+  padding: 12px 36px;
+  font: normal normal bold 15px/20px "Open Sans";
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+header,
+section,
+img:not([alt~="Logo"]),
+footer {
+  padding-inline: var(--content-horz-padding);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+footer {
+  background-color: #0a459e;
+  padding-block: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  a[href="#contact"] {
+    background-color: #ffbe3c;
+    color: #0a459e;
+  }
+
+  h3 {
+    color: #ffffff;
+    font: normal normal normal 42px/45px "Open Sans";
+  }
+}
+header {
+  background-color: #ebf4ff;
+  padding-bottom: 92px;
+}
+img[alt^="EBQ software and CRM"] {
+  grid-area: tools-img;
+}
+section:nth-of-type(1) {
+  grid-area: hero;
+  margin-bottom: 24px;
+  padding-bottom: 92px;
+  background-color: #ebf4ff;
+
+  h1 {
+    font: normal normal normal 50px/52px "Open Sans";
+    margin: -8px 0 24px 0;
+
+    span:last-child {
+      font: normal normal bold 50px/52px "Open Sans";
+      display: block;
+    }
+  }
+}
+section:nth-of-type(2) {
+  grid-area: tools;
+}
+section:nth-of-type(3) {
+  grid-area: team;
+
+  p + p {
+    margin: 16px 0 20px;
+  }
+}
+section:nth-of-type(2),
+section:nth-of-type(3) {
+  h2 {
+    font: normal normal normal 40px/45px "Open Sans";
+    margin-bottom: 32px;
+  }
+}
+img[alt^="Three professional team members"] {
+  grid-area: team-img;
+  filter: drop-shadow(3px 6px 15px #00000036);
+}
+
+@media (width >= 1200px) {
+  main {
+    grid-template-columns: 1fr fit-content(var(--desktop-column-width)) fit-content(
+        var(--desktop-column-width)
+      ) 1fr;
+    grid-template-areas:
+      "hero hero hero hero"
+      ". tools tools-img ."
+      ". team-img team .";
+    column-gap: 82px;
+    row-gap: 68px;
+    align-items: center;
+    text-align: left;
+    padding-bottom: 92px;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns:
+      minmax(max-content, 1fr)
+      minmax(0, var(--desktop-column-width))
+      minmax(0, var(--desktop-column-width))
+      minmax(max-content, 1fr);
+    grid-template-areas: "logo . . cta";
+    column-gap: 28px;
+    padding-top: 32px;
+
+    a:first-of-type {
+      grid-area: logo;
+      justify-self: self-end;
+    }
+    a:last-of-type {
+      grid-area: cta;
+      justify-self: self-start;
+    }
+  }
+
+  section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-inline: 0;
+
+    > * {
+      grid-column: 2;
+    }
+  }
+}
