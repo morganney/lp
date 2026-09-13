@@ -12,8 +12,8 @@
 
 ## Potential Enhancements
 
-- Use <picture>, <source>, srcset and sizes to better support art direction and resolution switching across devices, DPI, and network differences.
-- Make <header> sticky so it's always present regardless of the scroll position.
+- Use `<picture>`, `<source>`, srcset and sizes to better support art direction and resolution switching across devices, DPI, and network differences.
+- Make `<header>` sticky so it's always present regardless of the scroll position.
 
 ## Questions
 
