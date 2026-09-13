@@ -18,9 +18,11 @@ if (!reduceMotion && revealElements.length > 0) {
 
     if (remainingElements.length === 0) {
       removeEventListener("scroll", revealVisibleElements)
+      removeEventListener("resize", revealVisibleElements)
     }
   }
 
   addEventListener("scroll", revealVisibleElements, { passive: true })
+  addEventListener("resize", revealVisibleElements)
   revealVisibleElements()
 }
